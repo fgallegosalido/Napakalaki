@@ -60,6 +60,7 @@ public class BadConsequence {
         return nHiddenTreasures;
     }
     
+    
     @Override
     public String toString(){
         return "\nText = " + text + "\nLevels = " + Integer.toString(levels) +

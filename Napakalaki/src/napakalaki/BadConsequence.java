@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -12,6 +12,7 @@ import java.util.ArrayList;
  * @author francisco
  */
 public class BadConsequence {
+    static final int MAXTREASURES = 10;
     private String text;
     private int levels;
     private int nVisibleTreasures;
@@ -44,6 +45,8 @@ public class BadConsequence {
         specificHiddenTreasures = tHidden;
     }
     
+    public boolean isEmpty(){}
+    
     public String getText(){
         return text;
     }
@@ -60,11 +63,26 @@ public class BadConsequence {
         return nHiddenTreasures;
     }
     
+    public ArrayList<TreasureKind> getSpecificVisibleTreasures(){
+        return specificVisibleTreasures;
+    }
+    
+    public ArrayList<TreasureKind> getSpecificHiddenTreasures(){
+        return specificHiddenTreasures;
+    }
+    
+    public void substractVisibleTreasures(Treasure t){}
+    
+    public void substractHiddenTreasures(Treasure t){}
+    
+    public BadConsequence adjustToFitTreasureList(ArrayList<Treasure> v, ArrayList<Treasure> h){}
     
     @Override
     public String toString(){
-        return "\nText = " + text + "\nLevels = " + Integer.toString(levels) +
+        return "Text = " + text + "\nLevels = " + Integer.toString(levels) +
                "\nVisible Treasures = " + Integer.toString(nVisibleTreasures) +
-               "\nHidden Treasures = " + Integer.toString(nHiddenTreasures) + "\n"; 
+               "\nHidden Treasures = " + Integer.toString(nHiddenTreasures) +
+               "\nSpecific Visible Treasures = " + specificVisibleTreasures.toString() +
+               "\nSpecific Hidden Treasures = " + specificHiddenTreasures.toString() + "\n"; 
     }
  }

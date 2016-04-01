@@ -121,6 +121,47 @@ public class PruebaNapakalaki {
                             new ArrayList());
         prize = new Prize(1, 1);
         monstruos.add(new Monster("Bicéfalo", 20, badConsequence, prize));
+        
+        System.out.println("Más de nivel 10 de combate:\n\n");
+        more10CombatLevel(monstruos);
+        System.out.println("Solo pérdida de niveles:\n\n");
+        justLevelLose(monstruos);
+        System.out.println("Más de 1 nivel de buen rollo:\n\n");
+        more1LevelPrize(monstruos);
+        System.out.println("Pérdida de algún tipo de tesoros:\n\n");
+        specificTreasureLose(monstruos);
+    }
+    
+    public static void more10CombatLevel(ArrayList<Monster> monsters){
+        for (Monster element : monsters){
+            if (element.getCombatLevel() > 10){
+                System.out.println(element.toString());
+            }
+        }
+    }
+    
+    public static void justLevelLose(ArrayList<Monster> monsters){
+        for (Monster element : monsters){
+            if ((element.getBadConsequence().getVisible() == 0) && (element.getBadConsequence().getHidden() == 0)){
+                System.out.println(element.toString());
+            }
+        }
+    }
+    
+    public static void more1LevelPrize(ArrayList<Monster> monsters){
+        for (Monster element : monsters){
+            if (element.getPrize().getLevel() > 1){
+                System.out.println(element.toString());
+            }
+        }
+    }
+    
+    public static void specificTreasureLose(ArrayList<Monster> monsters){
+        for (Monster element : monsters){
+            if (element.getBadConsequence().getVisible() < 0){
+                System.out.println(element.toString());
+            }
+        }
     }
     
 }

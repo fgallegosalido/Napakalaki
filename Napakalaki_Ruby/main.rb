@@ -124,7 +124,7 @@ module Napakalaki
     prize = Prize.new(1, 1)
     monsters << Monster.new("El lenguas", 20, badConsequence, prize)
 
-    badConsequence = BadConsequence.newLevelNumberOfTreasures("Te faltan manos para tanta cabeza. "\
+    badConsequence = BadConsequence.newLevelSpecificTreasures("Te faltan manos para tanta cabeza. "\
                                                               + "Pierdes 3 niveles y tus tesoros visibles de las manos", 0,
                                                               [TreasureKind::ONEHAND, TreasureKind::BOTHHANDS], Array.new)
     prize = Prize.new(1, 1)

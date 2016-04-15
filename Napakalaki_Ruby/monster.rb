@@ -1,14 +1,28 @@
 #encoding: utf-8
 
-module Napakalaki
+module NapakalakiGame
   class Monster
-    attr_reader :name, :combatLevel, :badConsequence, :prize
+    @@contador = 0
+    attr_reader :name, :combatLevel, :badConsequence
 
     def initialize (aString, someLevels, badCons, somePrize)
       @name = aString
       @combatLevel = someLevels
       @badConsequence = badCons
       @prize = somePrize
+      @@contador += 1
+    end
+
+    def self.getNumberOfMonsters
+      @@contador
+    end
+
+    def getLevelsGained
+      @prize.level
+    end
+
+    def getTreasuresGained
+      @prize.treasures
     end
 
     def to_s

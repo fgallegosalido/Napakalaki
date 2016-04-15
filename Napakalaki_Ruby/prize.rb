@@ -1,6 +1,6 @@
 #encoding: utf-8
 
-module Napakalaki
+module NapakalakiGame
   class Prize
     attr_reader :treasures, :level
 

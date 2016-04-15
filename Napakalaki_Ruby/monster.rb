@@ -2,7 +2,6 @@
 
 module NapakalakiGame
   class Monster
-    @@contador = 0
     attr_reader :name, :combatLevel, :badConsequence
 
     def initialize (aString, someLevels, badCons, somePrize)
@@ -10,11 +9,6 @@ module NapakalakiGame
       @combatLevel = someLevels
       @badConsequence = badCons
       @prize = somePrize
-      @@contador += 1
-    end
-
-    def self.getNumberOfMonsters
-      @@contador
     end
 
     def getLevelsGained

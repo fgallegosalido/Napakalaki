@@ -23,9 +23,6 @@ module NapakalakiGame
       @@MAXLEVEL
     end
 
-    def combat(m, r)
-    end
-
     def bringToLife
       @dead = false
     end
@@ -79,8 +76,8 @@ module NapakalakiGame
       end
     end
 
-    #def combat (m)
-    #end
+    def combat (m)
+    end
 
     def makeTreasureVisible (t)
     end

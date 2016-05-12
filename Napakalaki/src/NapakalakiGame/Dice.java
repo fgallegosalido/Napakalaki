@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package napakalaki;
+package NapakalakiGame;
+
+import java.util.Random;
 
 /**
  *
@@ -18,5 +20,8 @@ public class Dice {
         return instance;
     }
     
-    public int nextNumber(){}
+    public int nextNumber(){
+        Random ran = new Random();
+        return ran.nextInt(6) + 1;
+    }
 }

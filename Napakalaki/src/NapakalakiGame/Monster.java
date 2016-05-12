@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package napakalaki;
+package NapakalakiGame;
 
 /**
  *
@@ -12,15 +12,17 @@ package napakalaki;
 public class Monster {
     private String name;
     private int combatLevel;
+    private int levelChangeAgainstCultistPlayer;
     
-    private BadConsequence badCons;
+    private BadConsequence badConsequence;
     private Prize prize;
     
-    public Monster(String Name, int level, BadConsequence bc, Prize prz){
+    public Monster(String Name, int level, BadConsequence bc, Prize prz, int cultLevel){
         name = Name;
         combatLevel = level;
-        badCons = bc;
+        badConsequence = bc;
         prize = prz;
+        levelChangeAgainstCultistPlayer = cultLevel;
     }
     
     public String getName(){
@@ -32,7 +34,7 @@ public class Monster {
     }
     
     public BadConsequence getBadConsequence(){
-        return badCons;
+        return badConsequence;
     }
     
     public int getLevelsGained(){
@@ -43,9 +45,13 @@ public class Monster {
         return prize.getTreasures();
     }
     
+    public int getCombatLevelAgainstCultistPlayer(){
+        return combatLevel + levelChangeAgainstCultistPlayer;
+    }
+    
     @Override
     public String toString(){
         return "Name = " + name + "\nCombat Level = " + Integer.toString(combatLevel) +
-               "\nBad Consequence:\n" + badCons.toString() + "Prize:\n" + prize.toString() + "\n";
+               "\nBad Consequence:\n" + badConsequence.toString() + "Prize:\n" + prize.toString() + "\n";
     }
 }
